@@ -4,21 +4,21 @@
 
 'use strict';
 
-var Session = require('./session.model');
+var CashGame = require('./cashGame.model');
 
 exports.register = function(socket) {
-  Session.schema.post('save', function (doc) {
+  CashGame.schema.post('save', function (doc) {
     onSave(socket, doc);
   });
-  Session.schema.post('remove', function (doc) {
+  CashGame.schema.post('remove', function (doc) {
     onRemove(socket, doc);
   });
 }
 
 function onSave(socket, doc, cb) {
-  socket.emit('session:save', doc);
+  socket.emit('cashGame:save', doc);
 }
 
 function onRemove(socket, doc, cb) {
-  socket.emit('session:remove', doc);
+  socket.emit('cashGame:remove', doc);
 }
