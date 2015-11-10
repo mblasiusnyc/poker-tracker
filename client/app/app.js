@@ -9,19 +9,23 @@ angular.module('pokerTrackerApp', [
   'ui.bootstrap'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-    $urlRouterProvider.otherwise('/sessions');
     $stateProvider
     	.state('sessions', {
-        url: '/sessions',
-        templateUrl: 'app/sessions/sessions.html',
+        url: '/',
+        templateUrl: 'app/sessions/sessions.list.html',
         controller: 'SessionsCtrl'
       })
+    	.state('createCashGame', {
+        url: '/',
+        templateUrl: 'app/sessions/sessions.createCashGame.html'
+      })
       .state('main', {
-        url: '/main',
+        url: '/',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
-      });
+      })
 
+    $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');

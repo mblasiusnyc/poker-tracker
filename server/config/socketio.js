@@ -19,8 +19,6 @@ function onConnect(socket) {
 
   // Insert sockets below
   require('../api/cashGame/cashGame.socket').register(socket);
-  require('../api/session/session.socket').register(socket);
-  require('../api/sessions/sessions.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 }
 

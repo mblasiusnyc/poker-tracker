@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title></title>
+    <title>Poker Tracker</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -17,7 +17,9 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
+    <link rel="stylesheet" href="app/reset.css">
       <!-- injector:css -->
+      <link rel="stylesheet" href="app/reset.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
@@ -27,7 +29,10 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view=""></div>
+		<div ng-include="'components/navbar/navbar.html'"></div>
+		<div class="container">
+	    <div ui-view=""></div>
+	  </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -71,9 +76,8 @@
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
           <script src="app/main/main.controller.js"></script>
-          <!--<script src="app/main/main.js"></script>-->
+          <script src="app/sessions/createCashGame.controller.js"></script>
           <script src="app/sessions/sessions.controller.js"></script>
-          <!--<script src="app/sessions/sessions.js"></script>-->
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/modal/modal.service.js"></script>
