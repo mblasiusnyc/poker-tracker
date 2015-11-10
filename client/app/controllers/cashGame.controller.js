@@ -2,6 +2,9 @@
 
 angular.module('pokerTrackerApp')
   .controller('CashGameCtrl', function ($scope, $http) {
+
+
+
   	$scope.data = {
     	gameOptions: ['Hold Em', 'Pot Limit Omaha', 'Omaha Hi/Lo', 'Razz'],
     	locationOptions: ['Ameristar', 'Mirage', 'Home Game'],
