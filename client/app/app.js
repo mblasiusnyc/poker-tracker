@@ -12,12 +12,12 @@ angular.module('pokerTrackerApp', [
     $stateProvider
     	.state('sessions', {
         url: '/',
-        templateUrl: 'app/sessions/sessions.list.html',
+        templateUrl: 'app/views/sessions.html',
         controller: 'SessionsCtrl'
       })
     	.state('createCashGame', {
         url: '/',
-        templateUrl: 'app/sessions/sessions.createCashGame.html'
+        templateUrl: 'app/views/cashgame.html'
       })
       .state('main', {
         url: '/',
