@@ -38,7 +38,7 @@
 	<select
 		name="tableSizeSelect"
 		ng-model="newCashGameData.tableSize"
-		ng-options="option.value for option in data.tableSizeOptions track by option.value"
+		ng-options="option.name for option in data.tableSizeOptions track by option.value"
 	>
 		<option value="">-- Select Table Size --</option>
 	</select>{{ newCashGameData.tableSize }}
