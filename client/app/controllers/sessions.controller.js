@@ -6,7 +6,7 @@ angular.module('pokerTrackerApp')
     $scope.sessions = [];
 
     $http.get('/api/cashGames').success(function(cashGames) {
-      cashGames.forEach(function(cashGame){
+      cashGames.forEach(function(cashGame) {
       	$scope.sessions.push(cashGame);
       });
       // TODO: Figure out socketio integration
