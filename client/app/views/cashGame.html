@@ -1,13 +1,48 @@
 
 <h1>New Cash Game</h1>
 <form>
-	<div class="dropdown" ng-controller="CreateCashGameCtrl">
-		<button id="game-dropdown" type="dropdown" aria-haspopup="true" aria-expanded="true">{{ selectedGame }}</button>
-		<ul class="dropdown-menu  " aria-labelledby="game-dropdown">
-			<li><a href="#">NL Hold Em</a></li>
-			<li><a href="#">P/L Omaha</a></li>
-			<li><a href="#">Omaha Hi/Lo</a></li>
-		</ul>
-	</div>
+	<label for="gameSelect">Game</label>
+	<select
+		name="gameSelect"
+		ng-model="selectedGame"
+		ng-options="option for option in data.gameOptions"
+	>
+		<option value="">-- Select Game --</option>
+	</select>{{ selectedGame }}
+	<br>
+
+	<input ng-model="selectedSmallBind" type="number" min=0></input>{{ selectedSmallBind }}
+	<input ng-model="selectedBigBind" type="number" min=0></input>{{ selectedBigBind }}
+	<br>
+
+	<label for="locationSelect">Location</label>
+	<select
+		name="locationSelect"
+		ng-model="selectedLocation"
+		ng-options="option for option in data.locationOptions"
+	>
+		<option value="">-- Select Location --</option>
+	</select>{{ selectedLocation }}
+	<br>
+
+	<label for="bankrollSelect">Bankroll</label>
+	<select
+		name="bankrollSelect"
+		ng-model="selectedBankroll"
+		ng-options="option for option in data.bankrollOptions"
+	>
+	</select>{{ selectedBankroll }}
+	<br>
+
+	<label for="tableSizeSelect">Table Size</label>
+	<select
+		name="tableSizeSelect"
+		ng-model="selectedTableSize"
+		ng-options="option.name for option in data.tableSizeOptions track by option.value"
+	>
+		<option value="">-- Select Table Size --</option>
+	</select>{{ selectedTableSize }}
+	<br>
+
 </form>
  

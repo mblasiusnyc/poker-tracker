@@ -17,7 +17,8 @@ angular.module('pokerTrackerApp', [
       })
     	.state('createCashGame', {
         url: '/',
-        templateUrl: 'app/views/cashgame.html'
+        templateUrl: 'app/views/cashgame.html',
+        controller: 'CashGameCtrl'
       })
       .state('main', {
         url: '/',
