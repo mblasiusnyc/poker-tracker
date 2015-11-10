@@ -1,48 +1,51 @@
 
 <h1>New Cash Game</h1>
-<form>
+<form ng-submit="createGame()">
 	<label for="gameSelect">Game</label>
 	<select
 		name="gameSelect"
-		ng-model="selectedGame"
+		ng-model="newCashGameData.gameType"
 		ng-options="option for option in data.gameOptions"
 	>
 		<option value="">-- Select Game --</option>
-	</select>{{ selectedGame }}
+	</select>{{ newCashGameData.gameType }}
 	<br>
 
-	<input ng-model="selectedSmallBind" type="number" min=0></input>{{ selectedSmallBind }}
-	<input ng-model="selectedBigBind" type="number" min=0></input>{{ selectedBigBind }}
+	<input ng-model="newCashGameData.smallBlind" type="number" min=0></input>{{ newCashGameData.smallBlind }}
+	<input ng-model="newCashGameData.bigBlind" type="number" min=0></input>{{ newCashGameData.bigBlind }}
 	<br>
 
 	<label for="locationSelect">Location</label>
 	<select
 		name="locationSelect"
-		ng-model="selectedLocation"
+		ng-model="newCashGameData.location"
 		ng-options="option for option in data.locationOptions"
 	>
 		<option value="">-- Select Location --</option>
-	</select>{{ selectedLocation }}
+	</select>{{ newCashGameData.location }}
 	<br>
 
 	<label for="bankrollSelect">Bankroll</label>
 	<select
 		name="bankrollSelect"
-		ng-model="selectedBankroll"
+		ng-model="newCashGameData.bankroll"
 		ng-options="option for option in data.bankrollOptions"
 	>
-	</select>{{ selectedBankroll }}
+	</select>{{ newCashGameData.bankroll }}
 	<br>
 
 	<label for="tableSizeSelect">Table Size</label>
 	<select
 		name="tableSizeSelect"
-		ng-model="selectedTableSize"
-		ng-options="option.name for option in data.tableSizeOptions track by option.value"
+		ng-model="newCashGameData.tableSize"
+		ng-options="option.value for option in data.tableSizeOptions track by option.value"
 	>
 		<option value="">-- Select Table Size --</option>
-	</select>{{ selectedTableSize }}
+	</select>{{ newCashGameData.tableSize }}
 	<br>
+
+	{{ newCashGameData }}
+	<button type="submit">Submit</button>
 
 </form>
  

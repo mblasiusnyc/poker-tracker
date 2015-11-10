@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var CashGameSchema = new Schema({
-	owner: String,
+	// owner: String,
 	startTime: {
 		type: Date,
 		default: Date.now
@@ -14,11 +14,12 @@ var CashGameSchema = new Schema({
 	gameType: String,
 	smallBlind: Number,
 	bigBlind: Number,
-	buyIn: Number,
-	cashOut: Number,
-	tips: Number,
-	tableSize: Number,
-	comment: String
+	bankroll: String,
+	// buyIn: Number,
+	// cashOut: Number,
+	// tips: Number,
+	tableSize: Number
+	// comment: String
 });
 
 module.exports = mongoose.model('CashGame', CashGameSchema);
