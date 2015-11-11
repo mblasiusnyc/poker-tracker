@@ -11,22 +11,26 @@ angular.module('pokerTrackerApp', [
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $stateProvider
     	.state('sessions', {
-        url: '/',
+        url: '/sessions',
         templateUrl: 'app/views/sessions.html',
         controller: 'SessionsCtrl'
       })
+    	.state('session', {
+        url: '/session/:sessionId',
+        templateUrl: 'app/views/session.html',
+        controller: 'SessionCtrl'
+      })
     	.state('createCashGame', {
-        url: '/',
+        url: '/sessions/createCashGame',
         templateUrl: 'app/views/cashgame.html',
         controller: 'CashGameCtrl'
       })
-      .state('main', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
-      })
-
-    $urlRouterProvider.otherwise('/');
+      // .state('main', {
+      //   url: '/',
+      //   templateUrl: 'app/main/main.html',
+      //   controller: 'MainCtrl'
+      // })
+    $urlRouterProvider.otherwise('/sessions');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');

@@ -12,4 +12,5 @@ angular.module('pokerTrackerApp')
       // TODO: Figure out socketio integration
       // socket.syncUpdates('thing', $scope.awesomeThings);
     });
+
   });

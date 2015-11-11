@@ -12,14 +12,19 @@ var CashGameSchema = new Schema({
 	endTime: Date,
 	location: String,
 	gameType: String,
+	tableSize: Object,
 	smallBlind: Number,
 	bigBlind: Number,
 	bankroll: String,
 	buyIn: Number,
 	cashOut: Number,
-	// tips: Number,
-	tableSize: Object
-	// comment: String
+	tips: {
+		type: Number,
+		default: 0
+	},
+	breakTime: Number,
+	hands: Object,
+	comment: String
 });
 
 module.exports = mongoose.model('CashGame', CashGameSchema);
