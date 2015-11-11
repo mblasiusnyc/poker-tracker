@@ -15,10 +15,10 @@ var CashGameSchema = new Schema({
 	smallBlind: Number,
 	bigBlind: Number,
 	bankroll: String,
-	// buyIn: Number,
-	// cashOut: Number,
+	buyIn: Number,
+	cashOut: Number,
 	// tips: Number,
-	tableSize: Number
+	tableSize: Object
 	// comment: String
 });
 

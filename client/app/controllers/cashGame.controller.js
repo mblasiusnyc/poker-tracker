@@ -3,8 +3,6 @@
 angular.module('pokerTrackerApp')
   .controller('CashGameCtrl', function ($scope, $http) {
 
-
-
   	$scope.data = {
     	gameOptions: ['Hold Em', 'Pot Limit Omaha', 'Omaha Hi/Lo', 'Razz'],
     	locationOptions: ['Ameristar', 'Mirage', 'Home Game'],
@@ -27,18 +25,19 @@ angular.module('pokerTrackerApp')
     	bankroll: 'Live Bankroll'
   	}
 
-
     $scope.createGame = function() {
+    	console.log("$scope.newCashGameData.tableSize: "+ $scope.newCashGameData.tableSize)
+      $http.post('/api/cashGames', $scope.newCashGameData
+      // {
+      	// location: $scope.newCashGameData.location,
+      	// gameType: $scope.newCashGameData.gameType,
+      	// smallBlind: $scope.newCashGameData.smallBlind,
+      	// bigBlind: $scope.newCashGameData.bigBlind,
+      	// bankroll: $scope.newCashGameData.bankroll,
+      	// tableSize: $scope.newCashGameData.tableSize
+      // }
+      );
     	console.log("GETS HERE")
-      $http.post('/api/cashGames', {
-      	location: $scope.newCashGameData.location,
-      	gameType: $scope.newCashGameData.gameType,
-      	smallBlind: $scope.newCashGameData.smallBlind,
-      	bigBlind: $scope.newCashGameData.bigBlind,
-      	bankroll: $scope.newCashGameData.bankroll,
-      	tableSize: ($scope.newCashGameData.tableSize.value ? $scope.newCashGameData.tableSize.value : '')
-      });
     };
-
 
   });
