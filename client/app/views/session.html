@@ -1,0 +1,75 @@
+{{session}}
+
+<ul id="session-stats-list">
+	<li class="session-stat">
+		<span class="stat-name">21:35</span>
+		<span class="stat-value">Value</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Net hour rate</span>
+		<span class="stat-value">Value</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Cashed Out</span>
+		<span class="stat-value">Value</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Buy-in</span>
+		<span class="stat-value">{{ session.buyIn }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Tips</span>
+		<span class="stat-value">{{ session.tips }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Game</span>
+		<span class="stat-value">{{ session.gameType }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Blinds</span>
+		<span class="stat-value">{{ (session.smallBlind && session.bigBlind) ? "$" + session.smallBlind +"/"+ session.bigBlind : "" }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Location</span>
+		<span class="stat-value">{{ session.location }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Bankroll</span>
+		<span class="stat-value">{{ session.bankroll }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Table Size</span>
+		<span class="stat-value">{{ session.tableSize.name }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Date</span>
+		<span class="stat-value">{{ session.startTime }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Break time</span>
+		<span class="stat-value">{{ session.breakTime }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Comment</span>
+		<span class="stat-value">{{ session.comment }}</span>
+	</li>
+
+	<li class="session-stat">
+		<span class="stat-name">Hands</span>
+		<span class="stat-value">{{ session.hands }}</span>
+	</li>
+
+	<button ng-click="endSession()">End Session</button>
+	<button ng-click="deleteSession()">Delete Session</button>
