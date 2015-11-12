@@ -26,18 +26,7 @@ angular.module('pokerTrackerApp')
   	}
 
     $scope.createGame = function() {
-    	console.log("$scope.newCashGameData.tableSize: "+ $scope.newCashGameData.tableSize)
-      $http.post('/api/cashGames', $scope.newCashGameData
-      // {
-      	// location: $scope.newCashGameData.location,
-      	// gameType: $scope.newCashGameData.gameType,
-      	// smallBlind: $scope.newCashGameData.smallBlind,
-      	// bigBlind: $scope.newCashGameData.bigBlind,
-      	// bankroll: $scope.newCashGameData.bankroll,
-      	// tableSize: $scope.newCashGameData.tableSize
-      // }
-      );
-    	console.log("GETS HERE")
+      $http.post('/api/cashGames', $scope.newCashGameData);
     };
 
   });

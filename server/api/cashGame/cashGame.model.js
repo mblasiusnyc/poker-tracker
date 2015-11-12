@@ -27,6 +27,27 @@ var CashGameSchema = new Schema({
 	comment: String
 });
 
+CashGameSchema.set('toJSON', { virtuals: true });
+
+CashGameSchema.virtual('startDayNumber').get(function() {
+  return this.startTime.getDate();
+});
+
+CashGameSchema.virtual('startDayOfWeek').get(function() {
+	var daysOfWeek = {
+		0: "Sunday",
+		1: "Monday",
+		2: "Tuesday",
+		3: "Wednesday",
+		4: "Thursday",
+		5: "Friday",
+		6: "Saturday"
+	}
+  return daysOfWeek[this.startTime.getDay()];
+});
+
+
+
 CashGameSchema.virtual('running').get(function() {
   return (this.endTime ? false : true);
 });
