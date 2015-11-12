@@ -31,6 +31,7 @@ exports.create = function(req, res) {
 // Updates an existing cashGame in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
+  console.log(req.body)
   CashGame.findById(req.params.id, function (err, cashGame) {
     if (err) { return handleError(res, err); }
     if(!cashGame) { return res.status(404).send('Not Found'); }
