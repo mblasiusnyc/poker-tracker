@@ -27,4 +27,10 @@ var CashGameSchema = new Schema({
 	comment: String
 });
 
-module.exports = mongoose.model('CashGame', CashGameSchema);
+CashGameSchema.virtual('running').get(function() {
+  return (this.endTime ? false : true);
+});
+
+var CashGameSchema = mongoose.model('CashGame', CashGameSchema);
+
+module.exports = CashGameSchema;

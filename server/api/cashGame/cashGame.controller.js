@@ -22,7 +22,6 @@ exports.show = function(req, res) {
 
 // Creates a new cashGame in the DB.
 exports.create = function(req, res) {
-	console.log(req.body)
   CashGame.create(req.body, function(err, cashGame) {
     if(err) { return handleError(res, err); }
     return res.status(201).json(cashGame);
