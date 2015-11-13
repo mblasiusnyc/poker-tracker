@@ -2,16 +2,22 @@
 
 angular.module('pokerTrackerApp')
   .directive('clickToEdit', function () {
+  	var templatePaths = {
+  		text: 'app/directives/clickToEdit/clickToEdit.text.html',
+  		dropdown: 'app/directives/clickToEdit/clickToEdit.dropdown.html',
+  		number: 'app/directives/clickToEdit/clickToEdit.number.html',
+  		date: 'app/directives/clickToEdit/clickToEdit.date.html',
+  	}
+
     return {
-      templateUrl: 'app/directives/clickToEdit/clickToEdit.html',
+      template: '<div ng-include="templateUrl"></div>',
       restrict: 'A',
       replace: true,
       scope: {
       	value: '=clickToEdit'
       },
       link: function (scope, element, attrs) {
-      	console.log('clickToEdit was called')
-      	console.log(scope)
+      		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + attrs.fieldType + '.html';
       },
       controller: function($scope) {
         $scope.view = {
