@@ -1,0 +1,18 @@
+.session-stats-list {
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.session-stats-list li {
+	height: 50px;
+	width: 400px;
+	border: 1px solid lightgray;
+}
+
+.stat-name {
+	float: left;
+}
+
+.stat-value {
+	float: right;
+}
