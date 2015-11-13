@@ -9,7 +9,8 @@ angular.module('pokerTrackerApp')
       replace: true,
       scope: {
       	name: '=statName',
-      	value: '=statValue'
+      	value: '=statValue',
+      	options: '=dropdownOptions'
       },
       link: function (scope, element, attrs) {
       		console.log('clickToEdit loaded')

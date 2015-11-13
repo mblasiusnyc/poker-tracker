@@ -1,4 +1,4 @@
-
+{{session}}
 <ul class="session-stats-list">
 	<li class="session-stat">
 		<span class="stat-name">21:35</span>
@@ -10,28 +10,10 @@
 		<span class="stat-value">Value</span>
 	</li>
 
-	<li class="session-stat">
-		<span class="stat-name">Cashed Out</span>
-		<span class="stat-value">Value</span>
-	</li>
 
-
-
-<!-- TODO: WORKING ON THIS SECTION -->
 	<div stat-name="'Buy-in'" stat-value="session.buyIn" field-type="number" click-to-edit></div>
-
-	<!-- <div click-to-edit="session.location" field-type="dropdown"></div> -->
-	<!-- <div click-to-edit="session.location" field-type="date"></div> -->
-	<!-- <div click-to-edit="session.location" field-type="number"></div> -->
-
-<!-- /////////////////////////////////////////////// -->
-
-
-
-	<li class="session-stat">
-		<span class="stat-name">Tips</span>
-		<span class="stat-value">{{ session.tips }}</span>
-	</li>
+	<div stat-name="'Cashed-out'" stat-value="session.cashOut" field-type="number" click-to-edit></div>
+	<div stat-name="'Tips'" stat-value="session.tips" field-type="number" click-to-edit></div>
 
 	<li class="session-stat">
 		<span class="stat-name">Game</span>
