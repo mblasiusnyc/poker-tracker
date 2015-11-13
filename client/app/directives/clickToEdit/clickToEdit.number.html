@@ -1,0 +1,8 @@
+<div class="click-to-edit">
+  <div ng-click="enableEditor()" ng-hide="view.editorEnabled">
+    {{ value }}
+  </div>
+  <div ng-show="view.editorEnabled">
+    <input ng-blur="save()" ng-model="view.editableValue" type="number">
+  </div>
+</div>
