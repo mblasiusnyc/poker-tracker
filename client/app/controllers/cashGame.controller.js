@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('pokerTrackerApp')
-  .controller('CashGameCtrl', function ($scope, $http) {
+  .controller('CashGameCtrl', function ($scope, $http, DropdownOptions) {
+
+  	console.log("DropdownOptions: "+DropdownOptions)
 
   	$scope.data = {
     	gameOptions: ['Hold Em', 'Pot Limit Omaha', 'Omaha Hi/Lo', 'Razz'],
