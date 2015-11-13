@@ -20,6 +20,10 @@ angular.module('pokerTrackerApp')
       		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + attrs.fieldType + '.html';
       },
       controller: function($scope) {
+      	$scope.blurCallback = function(){
+      		$scope.save();
+      	}
+
         $scope.view = {
           editableValue: $scope.value,
           editorEnabled: false
@@ -37,6 +41,7 @@ angular.module('pokerTrackerApp')
         $scope.save = function() {
           $scope.value = $scope.view.editableValue;
           $scope.disableEditor();
+          console.log($scope.value)
         };
       }
     };
