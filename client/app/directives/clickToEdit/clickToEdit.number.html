@@ -2,7 +2,13 @@
   <div ng-click="enableEditor()" ng-hide="view.editorEnabled">
     {{ value }}
   </div>
-  <div ng-show="view.editorEnabled">
-    <input ng-blur="save()" ng-model="view.editableValue" type="number">
-  </div>
+    <input
+    	ng-show="view.editorEnabled"
+    	focus-on-show
+    	class="edit-field"
+    	ng-blur="save()"
+    	ng-keypress="($event.charCode==13) ? save() : return"
+    	ng-model="view.editableValue"
+    	type="number"
+    >
 </div>

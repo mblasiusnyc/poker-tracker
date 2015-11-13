@@ -20,6 +20,7 @@ angular.module('pokerTrackerApp')
       		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + attrs.fieldType + '.html';
       },
       controller: function($scope) {
+
         $scope.view = {
           editableValue: $scope.value,
           editorEnabled: false
