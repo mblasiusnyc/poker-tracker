@@ -41,9 +41,11 @@ angular.module('pokerTrackerApp')
         };
 
         $scope.save = function() {
-          $scope.value = $scope.view.editableValue;
-          $scope.disableEditor();
-          console.log($scope.value)
+        	if($scope.view.editorEnabled) {
+	          $scope.value = $scope.view.editableValue;
+	          $scope.disableEditor();
+	          console.log($scope.value)
+        	}
         };
       }
     };
