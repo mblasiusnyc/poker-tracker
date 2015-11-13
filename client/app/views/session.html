@@ -10,10 +10,13 @@
 		<span class="stat-value">Value</span>
 	</li>
 
+	<div stat-name="'Location'" stat-value="session.location" field-type="dropdown" dropdown-options="'location'" click-to-edit></div>
 
 	<div stat-name="'Buy-in'" stat-value="session.buyIn" field-type="number" click-to-edit></div>
 	<div stat-name="'Cashed-out'" stat-value="session.cashOut" field-type="number" click-to-edit></div>
 	<div stat-name="'Tips'" stat-value="session.tips" field-type="number" click-to-edit></div>
+
+
 
 	<li class="session-stat">
 		<span class="stat-name">Game</span>
@@ -23,11 +26,6 @@
 	<li class="session-stat">
 		<span class="stat-name">Blinds</span>
 		<span class="stat-value">{{ (session.smallBlind && session.bigBlind) ? "$" + session.smallBlind +"/"+ session.bigBlind : "" }}</span>
-	</li>
-
-	<li class="session-stat">
-		<span class="stat-name">Location</span>
-		<span class="stat-value">{{ session.location }}</span>
 	</li>
 
 	<li class="session-stat">

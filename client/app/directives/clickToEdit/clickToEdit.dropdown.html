@@ -2,13 +2,15 @@
 <li ng-mousedown="view.editorEnabled ? return : enableEditor()" class="click-to-edit">
 		<span class="stat-name">{{ name }}</span>
     <span ng-hide="view.editorEnabled" class="stat-value">{{ value }}</span>
-	  <input
+	  <select
 	  	ng-show="view.editorEnabled"
+	  	ng-options="option for option in options"
 	  	focus-on-show
 	  	class="edit-field"
 	  	ng-keypress="($event.charCode==13) ? save() : return"
 	  	ng-model="view.editableValue"
-	  	type="number"
-		  ng-blur="save()"
-	  >
+	  	type="dropdown"
+	  	ng-blur="save()"
+		  ng-change="save()"
+	  ></select>
 </li>

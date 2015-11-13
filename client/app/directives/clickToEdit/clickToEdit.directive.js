@@ -10,13 +10,15 @@ angular.module('pokerTrackerApp')
       scope: {
       	name: '=statName',
       	value: '=statValue',
-      	options: '=dropdownOptions'
+      	dropdownOptions: '=dropdownOptions'
       },
       link: function (scope, element, attrs) {
-      		console.log('clickToEdit loaded')
       		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + attrs.fieldType + '.html';
       },
-      controller: function($scope) {
+      controller: function($scope, DropdownOptions) {
+      	if($scope.dropdownOptions) {
+      		$scope.options = DropdownOptions[$scope.dropdownOptions];
+      	}
 
         $scope.view = {
           editableValue: $scope.value,
