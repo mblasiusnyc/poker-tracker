@@ -1,5 +1,6 @@
 <li  ng-click="enableEditor()" class="click-to-edit">
 	<div>
+		<span class="stat-name">{{ name }}</span>
 	</div>
   <div>
     <span ng-hide="view.editorEnabled" class="stat-value">{{ value }}</span>
@@ -7,7 +8,7 @@
 	  	ng-show="view.editorEnabled"
 	  	focus-on-show
 	  	class="edit-field"
-	  	ng-blur="($event.charCode==13) ? return : save()"
+	  	ng-blur="save()"
 	  	ng-keypress="($event.charCode==13) ? save() : return"
 	  	ng-model="view.editableValue"
 	  	type="number"

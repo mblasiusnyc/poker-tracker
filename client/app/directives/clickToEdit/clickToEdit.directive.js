@@ -14,9 +14,11 @@ angular.module('pokerTrackerApp')
       restrict: 'A',
       replace: true,
       scope: {
-      	value: '=clickToEdit'
+      	name: '=statName',
+      	value: '=statValue'
       },
       link: function (scope, element, attrs) {
+      		console.log('clickToEdit loaded')
       		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + attrs.fieldType + '.html';
       },
       controller: function($scope) {
