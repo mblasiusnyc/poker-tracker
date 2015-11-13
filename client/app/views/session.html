@@ -10,32 +10,26 @@
 		<span class="stat-value">Value</span>
 	</li>
 
-	<div stat-name="'Location'" stat-value="session.location" field-type="dropdown" dropdown-options="'location'" click-to-edit></div>
 
 	<div stat-name="'Buy-in'" stat-value="session.buyIn" field-type="number" click-to-edit></div>
 	<div stat-name="'Cashed-out'" stat-value="session.cashOut" field-type="number" click-to-edit></div>
 	<div stat-name="'Tips'" stat-value="session.tips" field-type="number" click-to-edit></div>
 
-
-
-	<li class="session-stat">
-		<span class="stat-name">Game</span>
-		<span class="stat-value">{{ session.gameType }}</span>
-	</li>
+	<div stat-name="'Game'" stat-value="session.gameType" field-type="dropdown" dropdown-options="'gameType'" click-to-edit></div>
+	<div stat-name="'Location'" stat-value="session.location" field-type="dropdown" dropdown-options="'location'" click-to-edit></div>
 
 	<li class="session-stat">
 		<span class="stat-name">Blinds</span>
 		<span class="stat-value">{{ (session.smallBlind && session.bigBlind) ? "$" + session.smallBlind +"/"+ session.bigBlind : "" }}</span>
 	</li>
 
-	<li class="session-stat">
-		<span class="stat-name">Bankroll</span>
-		<span class="stat-value">{{ session.bankroll }}</span>
-	</li>
+	<div stat-name="'Bankroll'" stat-value="session.bankroll" field-type="dropdown" dropdown-options="'bankroll'" click-to-edit></div>
+
+	<div stat-name="'Table Size'" stat-value="session.tableSize" field-type="dropdown" dropdown-options="'tableSize'" click-to-edit></div>
 
 	<li class="session-stat">
 		<span class="stat-name">Table Size</span>
-		<span class="stat-value">{{ session.tableSize.name }}</span>
+		<span class="stat-value">{{ session.tableSize }}</span>
 	</li>
 
 	<li class="session-stat">

@@ -20,7 +20,7 @@ angular.module('pokerTrackerApp')
       		};
       		if(session.smallBlind && session.bigBlind) arr.push('$'+session.smallBlind+'/'+session.bigBlind);
       		if(session.gameType) arr.push(session.gameType);
-      		if(session.tableSize) arr.push(session.tableSize.name);
+      		if(session.tableSize) arr.push(session.tableSize);
       		if(session.location) arr.push(session.location);
       		scope.sessionInfoString = arr.join(' - ')
       	}
