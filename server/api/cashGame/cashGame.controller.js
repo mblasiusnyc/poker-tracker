@@ -6,7 +6,6 @@ var CashGame = require('./cashGame.model');
 // Get list of cashGames
 exports.index = function(req, res) {
   CashGame.find(function (err, cashGames) {
-  	console.log(cashGames[0].startTime.getDate())
     if(err) { return handleError(res, err); }
     return res.status(200).json(cashGames);
   });

@@ -1,9 +1,13 @@
 <a>
 	<li>
-		<div class="startDate">
-			<span>{{ item.startDayNumber }}</span>
-			<span>{{ item.startDayOfWeek }}</span>
+		<div class="session-date">
+			<span class="session-day-number">{{ item.startDayNumber }}</span>
+			<span class="session-day-of-week">{{ item.startDayOfWeek }}</span>
 		</div>
-		<span class="sessionInfoString">{{ sessionInfoString }}</span>
+
+		<div class="">
+			<span class="session-info-string">{{ sessionInfoString }}</span>
+			<span class="session-result"> {{ item.running ? "Running" : item.result }} </span>
+		</div>
 	</li>
 </a>
