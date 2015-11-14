@@ -16,11 +16,13 @@ var CashGameSchema = new Schema({
 	smallBlind: Number,
 	bigBlind: Number,
 	bankroll: String,
-	buyIn: Number,
-	cashOut: Number,
-	tips: {
+	buyIn: {
 		type: Number,
-		default: 0
+		default: 0,
+	},
+	cashOut: {
+		type: Number,
+		default: 0,
 	},
 	breakTime: Number,
 	hands: Object,

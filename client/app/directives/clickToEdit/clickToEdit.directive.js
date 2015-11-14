@@ -16,10 +16,23 @@ angular.module('pokerTrackerApp')
       link: function (scope, element, attrs) {
       		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + attrs.fieldType + '.html';
       },
-      controller: function($scope, DropdownOptions) {
+      controller: function($scope, DropdownOptions, $timeout) {
       	if($scope.dropdownOptions) {
       		$scope.options = DropdownOptions[$scope.dropdownOptions];
       	}
+
+      	$scope.focus = {
+      		1: false,
+      		2: false
+      	}
+
+				$scope.$watchCollection('focus', function(newValues, oldValues, scope) {
+					$timeout(function(){
+						if(newValues[1] == false && newValues[2] == false) {
+							$scope.save();
+						}
+					},0)
+				});
 
         $scope.view = {
           editableValue: $scope.value,
@@ -37,17 +50,11 @@ angular.module('pokerTrackerApp')
           $scope.view.editorEnabled = false;
         };
 
-        // $scope.preventSave = function($event) {
-        // 	$event.stopPropagation();
-        // }
-
         $scope.save = function() {
         	if($scope.view.editorEnabled) {
 	          $scope.value = $scope.view.editableValue;
         		if($scope.value2) $scope.value2 = $scope.view.editableValue2;
 	          $scope.disableEditor();
-	          console.log("$scope.value: ",$scope.value)
-	          console.log("$scope.value2: ",$scope.value2)
         	}
         };
       }
