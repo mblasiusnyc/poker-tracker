@@ -1,0 +1,20 @@
+
+<li ng-mousedown="view.editorEnabled ? return : enableEditor()" class="click-to-edit">
+    <span ng-hide="view.editorEnabled" class="stat-value">${{ value }}/{{ value2 }}</span>
+		<div ng-show="view.editorEnabled">
+		  <input
+		  	class="edit-field"
+		  	ng-keypress="($event.charCode==13) ? save() : return"
+		  	ng-model="view.editableValue"
+		  	ng-blur="save()"
+		  	type="number"
+		  >
+		  <input
+		  	class="edit-field"
+		  	ng-keypress="($event.charCode==13) ? save() : return"
+		  	ng-model="view.editableValue2"
+		  	ng-blur="save()"
+		  	type="number"
+		  >
+		</div>
+</li>
