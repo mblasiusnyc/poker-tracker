@@ -41,13 +41,13 @@ CashGameSchema.virtual('startDayNumber').get(function() {
 
 CashGameSchema.virtual('startDayOfWeek').get(function() {
 	var daysOfWeek = {
-		0: "Sunday",
-		1: "Monday",
-		2: "Tuesday",
-		3: "Wednesday",
-		4: "Thursday",
-		5: "Friday",
-		6: "Saturday"
+		0: "Sun",
+		1: "Mon",
+		2: "Tue",
+		3: "Wed",
+		4: "Thur",
+		5: "Fri",
+		6: "Sat"
 	}
   return daysOfWeek[this.startTime.getDay()];
 });
@@ -57,7 +57,7 @@ CashGameSchema.virtual('result').get(function() {
 });
 
 CashGameSchema.virtual('running').get(function() {
-  return (this.endTime ? false : true);
+  return (this.endTime < Date.now() ? false : true);
 });
 
 CashGameSchema.virtual('lengthMinutes').get(function() {

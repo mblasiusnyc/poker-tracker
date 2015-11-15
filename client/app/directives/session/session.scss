@@ -1,9 +1,43 @@
+
+
 .session-date {
 	float: left;
 	height: 100%;
-	width: 100px;
-	background: lightblue;
+	width: 80px;
+	background-color: $gray-light;
+	text-align: center;
+	span {
+		display: block;
+	}
+	.session-day-of-week {
+		margin: 17px 0 5px;
+		font-size: 24px;
+		font-weight: bold;
+	}
+	.session-day-number {
+		font-size: 20px;
+	}
 }
+
+.session-info {
+	background-color: $gray-medium;
+	height: 100%;
+	span {
+		display: inline-block;
+		font-size: 20px;
+		width: 394px;
+		text-align: left;
+	}
+	.session-info-string {
+		margin: 12px;
+		color: $gray-dark;
+	}
+	.session-result.positive { color: $green-dark; }
+	.session-result.negative { color: red; }
+	.session-result.running { color: white; }
+}
+
+
 
 .session-day-number {
 

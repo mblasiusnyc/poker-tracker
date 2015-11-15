@@ -1,13 +1,18 @@
-<a>
+<a class="session">
 	<li>
 		<div class="session-date">
-			<span class="session-day-number">{{ item.startDayNumber }}</span>
 			<span class="session-day-of-week">{{ item.startDayOfWeek }}</span>
+			<span class="session-day-number">{{ item.startDayNumber }}</span>
 		</div>
 
-		<div class="">
+		<div class="session-info">
 			<span class="session-info-string">{{ sessionInfoString }}</span>
-			<span class="session-result"> {{ item.running ? "Running" : item.result }} </span>
+			<span
+				class="session-result"
+				ng-class="{'positive': item.result >= 0, 'negative': item.result > 0, 'running': item.running}"
+			>
+				{{ item.running ? "Running" : '$'+item.result }}
+			</span>
 		</div>
 	</li>
 </a>

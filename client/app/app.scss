@@ -8,6 +8,19 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 
+
+// Color Variables
+$green-light: #7AC143;
+$green-dark: #3D8901;
+$gray-light: #F4F4F4;
+$gray-medium: #AAAAAA;
+$gray-dark: #333333;
+
+// Main Settings
+$primary-font: 'Josefin Sans', sans-serif;
+$background-color: $gray-dark;
+$primary-font-color: $gray-dark;
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -16,13 +29,13 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 }
 
 body {
-	background: black;
-	color: white;
+	background-color: $background-color;
+	color: $primary-font-color;
+	font-family: $primary-font;
 }
 
 input {
-	color: black;
-}
+	color: black;}
 
 .container {
 	text-align: center;
