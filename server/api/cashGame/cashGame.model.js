@@ -18,11 +18,15 @@ var CashGameSchema = new Schema({
 	bankroll: String,
 	buyIn: {
 		type: Number,
-		default: 0,
+		default: 0
 	},
 	cashOut: {
 		type: Number,
-		default: 0,
+		default: 0
+	},
+	tips: {
+		type: Number,
+		default: 0
 	},
 	breakTime: Number,
 	hands: Object,
@@ -57,9 +61,11 @@ CashGameSchema.virtual('running').get(function() {
 });
 
 CashGameSchema.virtual('lengthMinutes').get(function() {
-  // if(this.running) {
-  	return Math.floor((Date.now()-this.startTime)/(1000*60),0)
-  // }
+  return Math.floor((Date.now()-this.startTime)/(1000*60),0);
+});
+
+CashGameSchema.virtual('startDate').get(function() {
+  return this.startTime.getFullYear()+'-'+this.startTime.getMonth()+'-'+this.startTime.getDate();
 });
 
 var CashGameSchema = mongoose.model('CashGame', CashGameSchema);

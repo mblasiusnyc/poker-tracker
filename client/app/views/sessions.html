@@ -3,7 +3,6 @@
 	<a ui-sref="createCashGame"><button class="btn btn-large">New Tournament</button></a>
 </div>
 
-{{sessions}}
 <ul id="sessions-list">
 	<session ng-repeat="item in sessions" item="item" ui-sref="session({sessionId: item._id})"></session>
 </ul>

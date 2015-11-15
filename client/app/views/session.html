@@ -1,6 +1,3 @@
-{{session}}
-
-
 <ul class="session-stats-list">
 	<li class="session-stat">
 		<span class="stat-name">21:35</span>
@@ -12,44 +9,18 @@
 		<span class="stat-value">{{ (session.cashOut - session.buyIn)/(session.lengthMinutes/60) | currency }}</span>
 	</li>
 
-
-	<div class="blinds-stat" stat-name="'Blinds'" stat-value="session.smallBlind" stat-value2="session.bigBlind" field-type="blinds" click-to-edit></div>
-
-	<div stat-name="'Buy-in'" stat-value="session.buyIn" field-type="number" click-to-edit></div>
-	<div stat-name="'Cashed-out'" stat-value="session.cashOut" field-type="number" click-to-edit></div>
-	<div stat-name="'Tips'" stat-value="session.tips" field-type="number" click-to-edit></div>
-
-	<div stat-name="'Game'" stat-value="session.gameType" field-type="dropdown" dropdown-options="'gameType'" click-to-edit></div>
-	<div stat-name="'Location'" stat-value="session.location" field-type="dropdown" dropdown-options="'location'" click-to-edit></div>
-
-	<li class="session-stat">
-		<span class="stat-name">Blinds</span>
-		<span class="stat-value">{{ (session.smallBlind && session.bigBlind) ? "$" + session.smallBlind +"/"+ session.bigBlind : "" }}</span>
-	</li>
-
-	<div stat-name="'Bankroll'" stat-value="session.bankroll" field-type="dropdown" dropdown-options="'bankroll'" click-to-edit></div>
-
-	<div stat-name="'Table Size'" stat-value="session.tableSize" field-type="dropdown" dropdown-options="'tableSize'" click-to-edit></div>
-
-	<li class="session-stat">
-		<span class="stat-name">Date</span>
-		<span class="stat-value">{{ session.startTime | date }}</span>
-	</li>
-
-	<li class="session-stat">
-		<span class="stat-name">Break time</span>
-		<span class="stat-value">{{ session.breakTime }}</span>
-	</li>
-
-	<li class="session-stat">
-		<span class="stat-name">Comment</span>
-		<span class="stat-value">{{ session.comment }}</span>
-	</li>
-
-	<li class="session-stat">
-		<span class="stat-name">Hands</span>
-		<span class="stat-value">{{ session.hands }}</span>
-	</li>
+	<div class="blinds-stat" stat-name="'Blinds'" stat-key="'smallBlind'" stat-key2="'bigBlind'" stat-value="session.smallBlind" stat-value2="session.bigBlind" field-type="blinds" click-to-edit></div>
+	<div stat-name="'Buy-in'" stat-key="'buyIn'" stat-value="session.buyIn" field-type="number" click-to-edit></div>
+	<div stat-name="'Cashed-out'" stat-key="'cashOut'" stat-value="session.cashOut" field-type="number" click-to-edit></div>
+	<div stat-name="'Tips'" stat-key="'tips'" stat-value="session.tips" field-type="number" click-to-edit></div>
+	<div stat-name="'Game'" stat-key="'gameType'" stat-value="session.gameType" field-type="dropdown" dropdown-options="'gameType'" click-to-edit></div>
+	<div stat-name="'Location'" stat-key="'location'" stat-value="session.location" field-type="dropdown" dropdown-options="'location'" click-to-edit></div>
+	<div stat-name="'Bankroll'" stat-key="'bankroll'" stat-value="session.bankroll" field-type="dropdown" dropdown-options="'bankroll'" click-to-edit></div>
+	<div stat-name="'Table Size'" stat-key="'tableSize'" stat-value="session.tableSize" field-type="dropdown" dropdown-options="'tableSize'" click-to-edit></div>
+	<div class="date-stat" stat-name="'Start'" stat-key="'startTime'" stat-value="session.startTime" field-type="date" click-to-edit></div>
+	<div class="date-stat" stat-name="'End'" stat-key="'endTime'" stat-value="session.endTime" field-type="date" click-to-edit></div>
 
 	<button ng-click="endSession()">End Session</button>
 	<button ng-click="deleteSession()">Delete Session</button>
+</ul>
+
