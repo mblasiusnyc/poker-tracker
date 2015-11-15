@@ -56,6 +56,12 @@ CashGameSchema.virtual('running').get(function() {
   return (this.endTime ? false : true);
 });
 
+CashGameSchema.virtual('lengthMinutes').get(function() {
+  // if(this.running) {
+  	return Math.floor((Date.now()-this.startTime)/(1000*60),0)
+  // }
+});
+
 var CashGameSchema = mongoose.model('CashGame', CashGameSchema);
 
 module.exports = CashGameSchema;

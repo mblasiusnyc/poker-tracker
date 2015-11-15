@@ -16,7 +16,7 @@ angular.module('pokerTrackerApp')
       link: function (scope, element, attrs) {
       		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + attrs.fieldType + '.html';
       },
-      controller: function($scope, DropdownOptions, $timeout) {
+      controller: function($scope, DropdownOptions, $timeout, $http) {
       	if($scope.dropdownOptions) {
       		$scope.options = DropdownOptions[$scope.dropdownOptions];
       	}
@@ -55,6 +55,7 @@ angular.module('pokerTrackerApp')
 	          $scope.value = $scope.view.editableValue;
         		if($scope.value2) $scope.value2 = $scope.view.editableValue2;
 	          $scope.disableEditor();
+
         	}
         };
       }

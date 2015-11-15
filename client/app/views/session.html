@@ -1,13 +1,15 @@
 {{session}}
+
+
 <ul class="session-stats-list">
 	<li class="session-stat">
 		<span class="stat-name">21:35</span>
-		<span class="stat-value">Value</span>
+		<span class="stat-value">{{ session.cashOut - session.buyIn | currency }}</span>
 	</li>
 
 	<li class="session-stat">
 		<span class="stat-name">Net hour rate</span>
-		<span class="stat-value">Value</span>
+		<span class="stat-value">{{ (session.cashOut - session.buyIn)/(session.lengthMinutes/60) | currency }}</span>
 	</li>
 
 
@@ -31,7 +33,7 @@
 
 	<li class="session-stat">
 		<span class="stat-name">Date</span>
-		<span class="stat-value">{{ session.startTime }}</span>
+		<span class="stat-value">{{ session.startTime | date }}</span>
 	</li>
 
 	<li class="session-stat">
