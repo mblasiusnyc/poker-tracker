@@ -7,6 +7,7 @@ angular.module('pokerTrackerApp')
       restrict: 'A',
       replace: true,
       scope: {
+      	fieldType: '=fieldType',
       	name: '=statName',
       	key: '=statKey',
       	key2: '=statKey2',
@@ -15,9 +16,9 @@ angular.module('pokerTrackerApp')
       	dropdownOptions: '=dropdownOptions'
       },
       link: function (scope, element, attrs) {
-      		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + attrs.fieldType + '.html';
+      		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + scope.fieldType + '.html';
       },
-      controller: function($scope, DropdownOptions, $timeout, $http, $stateParams) {
+      controller: function($scope, DropdownOptions, $timeout, $http, $stateParams, moment) {
       	if($scope.dropdownOptions) {
       		$scope.options = DropdownOptions[$scope.dropdownOptions];
       	}
@@ -59,21 +60,32 @@ angular.module('pokerTrackerApp')
           $scope.view.editorEnabled = false;
         };
 
+        function setLengthMinutes() {
+          $timeout(function(){
+          	var endTime = moment($scope.$parent.session.endTime);
+          	var startTime = moment($scope.$parent.session.startTime);
+          	var currentTime = moment();
+          	if(moment(endTime).isValid()) {
+		          $scope.$parent.session.lengthMinutes = (endTime.diff(startTime))/(1000*60);
+	          } else {
+	          	$scope.$parent.session.lengthMinutes = (currentTime.diff(startTime))/(1000*60);
+	          }
+          },0);
+        }
+
         $scope.save = function() {
         	if($scope.view.editorEnabled) {
 	          $scope.value = $scope.view.editableValue;
         		if($scope.value2) $scope.value2 = $scope.view.editableValue2;
 	          $scope.disableEditor();
+          	if($scope.fieldType === 'date' && moment($scope.value).isValid()) {
+          		setLengthMinutes();
+          	} else if($scope.fieldType === 'date') {
+          		return;
+          	}
 	          var newSession = {};
 	          newSession[$scope.key] = $scope.value;
 	          if($scope.value2) newSession[$scope.key2] = $scope.value2;
-	          $timeout(function(){
-		          if($scope.$parent.session.endTime) {
-			          $scope.$parent.session.lengthMinutes = ($scope.$parent.session.endTime-$scope.$parent.session.startTime)/(1000*60)
-		          } else {
-		          	$scope.$parent.session.lengthMinutes = (Date.now()-$scope.$parent.session.startTime)/(1000*60)
-		          }
-	          },0)
       	  	$http.put('/api/cashGames/'+$stateParams.sessionId, newSession).success(function(cashGame, Status) {
         			console.log( Status === 200 ? "Session has been saved" : "There was an error saving the session");
         		});
