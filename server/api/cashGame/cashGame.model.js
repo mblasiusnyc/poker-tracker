@@ -61,7 +61,11 @@ CashGameSchema.virtual('running').get(function() {
 });
 
 CashGameSchema.virtual('lengthMinutes').get(function() {
-  return Math.floor((Date.now()-this.startTime)/(1000*60),0);
+	if(this.endTime) {
+		return (this.endTime-this.startTime)/(1000*60)
+	} else {
+	  return (Date.now()-this.startTime)/(1000*60);
+	}
 });
 
 CashGameSchema.virtual('startDate').get(function() {

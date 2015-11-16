@@ -1,6 +1,6 @@
 <li ng-mousedown="view.editorEnabled ? return : enableEditor()" class="click-to-edit">
     <span class="stat-name">{{ name }}</span>
-    <span ng-hide="view.editorEnabled" class="stat-value">{{ value | date }}</span>
+    <span ng-hide="view.editorEnabled" class="stat-value">{{ value | date:"short" }}</span>
 		  <input
 			  ng-show="view.editorEnabled"
 			  focus-on-show
