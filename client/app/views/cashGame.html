@@ -11,11 +11,15 @@
 	</select>{{ newCashGameData.gameType }}
 	<br>
 
-	<input ng-model="newCashGameData.smallBlind" type="number" min=0></input>{{ newCashGameData.smallBlind }}
-	<input ng-model="newCashGameData.bigBlind" type="number" min=0></input>{{ newCashGameData.bigBlind }}
+	<label>Small Blind</label>
+		<input ng-model="newCashGameData.smallBlind" type="number" min=0></input>{{ newCashGameData.smallBlind }}
+	<label>Big Blind</label>
+		<input ng-model="newCashGameData.bigBlind" type="number" min=0></input>{{ newCashGameData.bigBlind }}
 	<br>
 
+	<label>Buy In</label>
 	<input ng-model="newCashGameData.buyIn" type="number" min=0></input>{{ newCashGameData.buyIn }}
+	<label>Cash Out</label>
 	<input ng-model="newCashGameData.cashOut" type="number" min=0></input>{{ newCashGameData.cashOut }}
 	<br>
 

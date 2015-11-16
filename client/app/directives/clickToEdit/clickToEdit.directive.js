@@ -69,7 +69,6 @@ angular.module('pokerTrackerApp')
 	          if($scope.value2) newSession[$scope.key2] = $scope.value2;
 	          $timeout(function(){
 		          if($scope.$parent.session.endTime) {
-		          	console.log(($scope.$parent.session.endTime-$scope.$parent.session.startTime)/(1000*60))
 			          $scope.$parent.session.lengthMinutes = ($scope.$parent.session.endTime-$scope.$parent.session.startTime)/(1000*60)
 		          } else {
 		          	$scope.$parent.session.lengthMinutes = (Date.now()-$scope.$parent.session.startTime)/(1000*60)
