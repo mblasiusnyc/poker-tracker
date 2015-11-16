@@ -76,16 +76,13 @@ angular.module('pokerTrackerApp')
         $scope.save = function() {
         	if($scope.view.editorEnabled) {
 	          $scope.value = $scope.view.editableValue;
-        		if($scope.value2) $scope.value2 = $scope.view.editableValue2;
+	          if($scope.view.editableValue2) $scope.value2 = $scope.view.editableValue2;
 	          $scope.disableEditor();
           	if($scope.fieldType === 'date' && moment(new Date($scope.value)).isValid()) {
           		setLengthMinutes();
           	} else if($scope.fieldType === 'date') {
           		return;
           	}
-          	console.log($scope)
-        		console.log('$scope.value: ', $scope.value)
-        		console.log('$scope.value2: ', $scope.value2)
 	          var newSession = {};
 	          newSession[$scope.key] = $scope.value;
 	          if($scope.value2) newSession[$scope.key2] = $scope.value2;
