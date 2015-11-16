@@ -9,7 +9,7 @@ angular.module('pokerTrackerApp')
       	item: '='
       },
       link: function (scope, element, attrs) {
-      	function createString() {
+      	function createInfoString() {
       		var arr = [];
       		var session = {};
       		var propsToDisplay = ['smallBlind', 'bigBlind', 'gameType', 'tableSize', 'location'];
@@ -24,7 +24,17 @@ angular.module('pokerTrackerApp')
       		if(session.location) arr.push(session.location);
       		scope.sessionInfoString = arr.join(' - ')
       	}
-      	createString();
+      	createInfoString();
+
+      	function createResultString() {
+      		scope.resultString = '';
+      		if(scope.item.result >= 0) {
+      			scope.resultString = '$'+scope.item.result.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+      		} else {
+      			scope.resultString = '-$'+Math.abs(scope.item.result).toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+      		}
+      	}
+      	createResultString();
       }
     };
   });
