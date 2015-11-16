@@ -67,6 +67,7 @@ angular.module('pokerTrackerApp')
 	          var newSession = {};
 	          newSession[$scope.key] = $scope.value;
 	          if($scope.value2) newSession[$scope.key2] = $scope.value2;
+	          $scope.$parent.session.lengthMinutes = (Date.now()-$scope.$parent.session.startTime)/(1000*60)
       	  	$http.put('/api/cashGames/'+$stateParams.sessionId, newSession).success(function(cashGame, Status) {
         			console.log( Status === 200 ? "Session has been saved" : "There was an error saving the session");
         		});
