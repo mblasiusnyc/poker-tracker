@@ -3,16 +3,6 @@
     <span ng-hide="view.editorEnabled" class="stat-value">${{ value }}/{{ value2 }}</span>
 		  <input
 			  ng-show="view.editorEnabled"
-			  ng-mousedown="$event.stopPropagation()"
-		  	class="edit-field pull-right"
-		  	ng-keypress="($event.charCode==13) ? save() : return"
-		  	ng-model="view.editableValue2"
-		  	type="number"
-		  	ng-blur="focus[2] = false"
-		  	ng-focus="focus[2] = true"
-		  >
-		  <input
-			  ng-show="view.editorEnabled"
 			  focus-on-show
 		  	class="edit-field"
 		  	ng-keypress="($event.charCode==13) ? save() : return"
@@ -20,5 +10,15 @@
 		  	type="number"
 		  	ng-blur="focus[1] = false"
 		  	ng-focus="focus[1] = true"
+		  >
+		  <input
+			  ng-show="view.editorEnabled"
+			  ng-mousedown="$event.stopPropagation()"
+		  	class="edit-field pull-right"
+		  	ng-keypress="($event.charCode==13) ? save() : return"
+		  	ng-model="view.editableValue2"
+		  	type="number"
+		  	ng-blur="focus[2] = false"
+		  	ng-focus="focus[2] = true"
 		  >
 </li>

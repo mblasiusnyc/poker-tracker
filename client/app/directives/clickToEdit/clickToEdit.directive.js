@@ -62,10 +62,10 @@ angular.module('pokerTrackerApp')
 
         function setLengthMinutes() {
           $timeout(function(){
-          	var endTime = moment($scope.$parent.session.endTime);
-          	var startTime = moment($scope.$parent.session.startTime);
+          	var endTime = moment(new Date($scope.$parent.session.endTime));
+          	var startTime = moment(new Date($scope.$parent.session.startTime));
           	var currentTime = moment();
-          	if(moment(endTime).isValid()) {
+          	if((endTime).isValid()) {
 		          $scope.$parent.session.lengthMinutes = (endTime.diff(startTime))/(1000*60);
 	          } else {
 	          	$scope.$parent.session.lengthMinutes = (currentTime.diff(startTime))/(1000*60);
@@ -78,11 +78,14 @@ angular.module('pokerTrackerApp')
 	          $scope.value = $scope.view.editableValue;
         		if($scope.value2) $scope.value2 = $scope.view.editableValue2;
 	          $scope.disableEditor();
-          	if($scope.fieldType === 'date' && moment($scope.value).isValid()) {
+          	if($scope.fieldType === 'date' && moment(new Date($scope.value)).isValid()) {
           		setLengthMinutes();
           	} else if($scope.fieldType === 'date') {
           		return;
           	}
+          	console.log($scope)
+        		console.log('$scope.value: ', $scope.value)
+        		console.log('$scope.value2: ', $scope.value2)
 	          var newSession = {};
 	          newSession[$scope.key] = $scope.value;
 	          if($scope.value2) newSession[$scope.key2] = $scope.value2;
