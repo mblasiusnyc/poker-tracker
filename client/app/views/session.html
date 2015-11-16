@@ -20,7 +20,10 @@
 	<div class="date-stat" stat-name="'Start'" stat-key="'startTime'" stat-value="session.startTime" field-type="date" click-to-edit></div>
 	<div class="date-stat" stat-name="'End'" stat-key="'endTime'" stat-value="session.endTime" field-type="date" click-to-edit></div>
 
-	<button ng-click="endSession()">End Session</button>
-	<button ng-click="deleteSession()">Delete Session</button>
 </ul>
+
+<div class="session-buttons">
+	<button class="btn btn-success" ng-click="endSession()">End Session</button>
+	<button class="btn btn-danger" ng-click="deleteSession()">Delete Session</button>
+</div>
 

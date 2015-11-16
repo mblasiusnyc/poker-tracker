@@ -53,7 +53,7 @@ CashGameSchema.virtual('startDayOfWeek').get(function() {
 });
 
 CashGameSchema.virtual('result').get(function() {
-  return (this.running ? "" : (this.buyIn - this.cashOut));
+  return (this.running ? "" : (this.cashOut - this.buyIn));
 });
 
 CashGameSchema.virtual('running').get(function() {

@@ -4,9 +4,31 @@
 }
 
 .session-stats-list li {
+	position: relative;
+	background-color: $gray-medium;
 	height: 50px;
 	width: 400px;
 	border: 1px solid lightgray;
+	padding: 0 18px;
+	span {
+		margin: 0 auto;
+	}
+	input, select {
+		position: absolute;
+		right: 18px;
+		top: 13px;
+		text-align: center;
+	}
+	input[type='number'] {
+		max-width: 65px;
+	}
+	input[type='datetime-local'] {
+		height: 23px;
+		width: 200px;
+	}
+	span {
+		line-height: 50px;
+	}
 }
 
 .stat-name {
@@ -15,4 +37,12 @@
 
 .stat-value {
 	float: right;
+}
+
+.session-buttons {
+	button {
+		margin: 12px;
+		width: 110px;
+		height: 40px;
+	}
 }
