@@ -4,6 +4,7 @@
 		<span class="stat-name">{{ name }}</span>
     <span ng-hide="view.editorEnabled" class="stat-value">{{ value | currency : '$' : 0 }}</span>
 	  <input
+		  name="{{ name.toLowerCase() }}"
 	  	ng-show="view.editorEnabled"
 	  	focus-on-show
 	  	class="edit-field"

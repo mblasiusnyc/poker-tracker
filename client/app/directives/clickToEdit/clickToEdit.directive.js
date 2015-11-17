@@ -23,6 +23,13 @@ angular.module('pokerTrackerApp')
       		$scope.options = DropdownOptions[$scope.dropdownOptions];
       	}
 
+      	function createBlindsString() {
+      		$timeout(function() {
+	      		$scope.blindsString = $scope.value && $scope.value2 ? '$'+$scope.value+'/'+$scope.value2 : '';
+      		}, 0);
+      	}
+      	$scope.fieldType === 'blinds' ? createBlindsString() : '';
+
       	if($scope.key === 'startTime' || $scope.key === 'endTime') {
 	      	$timeout(function(){
 		      	$scope.value = new Date($scope.value);
@@ -83,6 +90,7 @@ angular.module('pokerTrackerApp')
           	} else if($scope.fieldType === 'date') {
           		return;
           	}
+          	if($scope.fieldType === 'blinds') createBlindsString();
 	          var newSession = {};
 	          newSession[$scope.key] = $scope.value;
 	          if($scope.value2) newSession[$scope.key2] = $scope.value2;

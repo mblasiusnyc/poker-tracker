@@ -4,6 +4,7 @@
 		<span class="stat-name">{{ name }}</span>
     <span ng-hide="view.editorEnabled" class="stat-value">{{ value }}</span>
 	  <select
+		  name="{{ name.toLowerCase() }}"
 	  	ng-show="view.editorEnabled"
 	  	ng-options="option for option in options"
 	  	focus-on-show
