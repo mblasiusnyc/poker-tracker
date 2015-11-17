@@ -1,4 +1,4 @@
-<form name="sessionform">
+<!-- <form name="sessionform"> -->
 	<ul class="session-stats-list">
 		<li class="session-stat">
 			<span class="stat-name">{{ session.lengthMinutes | minutesToTime }}</span>
@@ -23,7 +23,6 @@
 	</ul>
 
 	<div class="session-buttons">
-		<a ui-sref="sessions"><button class="btn btn-success" ng-click="endSession()">End Session</button></a>
+		<button class="btn btn-success" ng-click="endSession()">End Session</button>
 		<a ui-sref="sessions"><button class="btn btn-danger" ng-click="deleteSession()">Delete Session</button></a>
 	</div>
-</form>

@@ -14,10 +14,11 @@ angular.module('pokerTrackerApp')
   	}
 
   	$scope.endSession = function(){
-  		var endDate = new Date(Date.now());
+  		var endDate = moment(new Date(Date.now()));
   		$scope.session.endTime = endDate.toISOString();
 	  	$http.put('/api/cashGames/'+$stateParams.sessionId, $scope.session).success(function(cashGame, Status) {
   			console.log('Session Updated');
+  			$scope.$broadcast('sessionUpdated');
   		});
   	}
 

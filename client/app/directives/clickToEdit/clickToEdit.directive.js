@@ -30,13 +30,17 @@ angular.module('pokerTrackerApp')
       	}
       	$scope.fieldType === 'blinds' ? createBlindsString() : '';
 
-      	if($scope.key === 'startTime' || $scope.key === 'endTime') {
-	      	$timeout(function(){
-		      	$scope.value = new Date($scope.value);
-		      	$scope.value.setSeconds(0);
-		      	$scope.value.setMilliseconds(0);
-	      	},0);
+      	function convertDate() {
+      		if($scope.key === 'startTime' || $scope.key === 'endTime') {
+		      	$timeout(function(){
+			      	$scope.value = new Date($scope.value);
+			      	$scope.value.setSeconds(0);
+			      	$scope.value.setMilliseconds(0);
+		      	},0);
+      		}
       	}
+      	convertDate();
+      	$scope.$on('sessionUpdated', convertDate);
 
       	$scope.focus = {
       		1: false,

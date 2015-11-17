@@ -4,7 +4,6 @@
 	  <input
 	  	name="{{ name.toLowerCase() }}"
 		  ng-show="view.editorEnabled"
-		  ng-min="{{ $parent.session.beginTime | date:'yyyy-MM-ddTHH:mm:ss' }}"
 		  focus-on-show
 	  	class="edit-field"
 	  	ng-keypress="($event.charCode==13) ? save() : return"
