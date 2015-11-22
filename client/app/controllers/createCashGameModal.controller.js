@@ -37,15 +37,22 @@ angular.module('pokerTrackerApp').controller('CashGameCtrl', function ($scope, $
 // It is not the same as the $uibModal service used above.
 
 
-angular.module('pokerTrackerApp').controller('CashGameInstanceCtrl', function ($scope, $uibModalInstance, items) {
+angular.module('pokerTrackerApp').controller('CashGameInstanceCtrl', function ($scope, $uibModalInstance, $http, DropdownOptions) {
 
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
+	$scope.data = {
+  	gameOptions: DropdownOptions.gameType,
+  	locationOptions: DropdownOptions.location,
+  	bankrollOptions: DropdownOptions.bankroll,
+  	tableSizeOptions: DropdownOptions.tableSize
+	}
 
-  $scope.ok = function () {
-    $uibModalInstance.close($scope.selected.item);
+	//Default Dropdown Values
+	$scope.newCashGameData = {
+  	bankroll: 'Live Bankroll'
+	}
+
+  $scope.createGame = function() {
+    $http.post('/api/cashGames', $scope.newCashGameData);
   };
 
   $scope.cancel = function () {
