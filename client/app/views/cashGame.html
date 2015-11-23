@@ -1,59 +1,69 @@
+<h1 id="create-session-title">New Cash Game Session</h1>
+<form class="create-session" ng-submit="createGame()">
+	<div class="input-section">
+		<label for="gameSelect">Game</label>
+		<select
+			name="gameSelect"
+			ng-model="newCashGameData.gameType"
+			ng-options="option for option in data.gameOptions"
+		>
+			<option value="">-- Select Game --</option>
+		</select>{{ newCashGameData.gameType }}
+	</div>
 
-<h1>New Cash Game</h1>
-<form ng-submit="createGame()">
-	<label for="gameSelect">Game</label>
-	<select
-		name="gameSelect"
-		ng-model="newCashGameData.gameType"
-		ng-options="option for option in data.gameOptions"
-	>
-		<option value="">-- Select Game --</option>
-	</select>{{ newCashGameData.gameType }}
-	<br>
-
-	<label>Small Blind</label>
+	<div class="input-section">
+		<label>Small Blind</label>
 		<input ng-model="newCashGameData.smallBlind" type="number" min=0></input>{{ newCashGameData.smallBlind }}
-	<label>Big Blind</label>
+	</div>
+
+	<div class="input-section">
+		<label>Big Blind</label>
 		<input ng-model="newCashGameData.bigBlind" type="number" min=0></input>{{ newCashGameData.bigBlind }}
-	<br>
+	</div>
 
-	<label>Buy In</label>
-	<input ng-model="newCashGameData.buyIn" type="number" min=0></input>{{ newCashGameData.buyIn }}
-	<label>Cash Out</label>
-	<input ng-model="newCashGameData.cashOut" type="number" min=0></input>{{ newCashGameData.cashOut }}
-	<br>
+	<div class="input-section">
+		<label>Buy In</label>
+		<input ng-model="newCashGameData.buyIn" type="number" min=0></input>{{ newCashGameData.buyIn }}
+	</div>
 
-	<label for="locationSelect">Location</label>
-	<select
-		name="locationSelect"
-		ng-model="newCashGameData.location"
-		ng-options="option for option in data.locationOptions"
-	>
-		<option value="">-- Select Location --</option>
-	</select>{{ newCashGameData.location }}
-	<br>
+	<div class="input-section">
+		<label>Cash Out</label>
+		<input ng-model="newCashGameData.cashOut" type="number" min=0></input>{{ newCashGameData.cashOut }}
+	</div>
 
-	<label for="bankrollSelect">Bankroll</label>
-	<select
-		name="bankrollSelect"
-		ng-model="newCashGameData.bankroll"
-		ng-options="option for option in data.bankrollOptions"
-	>
-	</select>{{ newCashGameData.bankroll }}
-	<br>
+	<div class="input-section">
+		<label for="locationSelect">Location</label>
+		<select
+			name="locationSelect"
+			ng-model="newCashGameData.location"
+			ng-options="option for option in data.locationOptions"
+		>
+			<option value="">-- Select Location --</option>
+		</select>{{ newCashGameData.location }}
+	</div>
 
-	<label for="tableSizeSelect">Table Size</label>
-	<select
-		name="tableSizeSelect"
-		ng-model="newCashGameData.tableSize"
-		ng-options="option for option in data.tableSizeOptions"
-	>
-		<option value="">-- Select Table Size --</option>
-	</select>{{ newCashGameData.tableSize }}
-	<br>
+	<div class="input-section">
+		<label for="bankrollSelect">Bankroll</label>
+		<select
+			name="bankrollSelect"
+			ng-model="newCashGameData.bankroll"
+			ng-options="option for option in data.bankrollOptions"
+		>
+		</select>
+	</div>
 
-	{{ newCashGameData }}
-	<button type="submit">Submit</button>
+	<div class="input-section">
+		<label for="tableSizeSelect">Table Size</label>
+		<select
+			name="tableSizeSelect"
+			ng-model="newCashGameData.tableSize"
+			ng-options="option for option in data.tableSizeOptions"
+		>
+			<option value="">-- Select Table Size --</option>
+		</select>
+	</div>
+
+	<button class="btn btn-success create-session-button" type="submit">Create</button>
 
 </form>
  

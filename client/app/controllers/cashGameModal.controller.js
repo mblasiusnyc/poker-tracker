@@ -1,8 +1,6 @@
 
 angular.module('pokerTrackerApp').controller('CashGameCtrl', function ($scope, $uibModal, $log) {
 
-  $scope.items = ['item1', 'item2', 'item3'];
-
   $scope.animationsEnabled = true;
 
   $scope.open = function (size) {
@@ -12,12 +10,7 @@ angular.module('pokerTrackerApp').controller('CashGameCtrl', function ($scope, $
       templateUrl: 'app/views/cashGame.html',
       // template: 'HELLO',
       controller: 'CashGameInstanceCtrl',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
+      size: 'sm'
     });
 
     modalInstance.result.then(function (selectedItem) {
