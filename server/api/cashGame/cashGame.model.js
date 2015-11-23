@@ -12,7 +12,7 @@ var CashGameSchema = new Schema({
 	endTime: Date,
 	location: String,
 	gameType: String,
-	tableSize: Object,
+	tableSize: String,
 	smallBlind: Number,
 	bigBlind: Number,
 	bankroll: String,
