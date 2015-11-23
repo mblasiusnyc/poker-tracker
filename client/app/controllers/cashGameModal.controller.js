@@ -8,7 +8,6 @@ angular.module('pokerTrackerApp').controller('CashGameCtrl', function ($scope, $
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
       templateUrl: 'app/views/cashGame.html',
-      // template: 'HELLO',
       controller: 'CashGameInstanceCtrl',
       size: 'sm'
     });
@@ -30,7 +29,7 @@ angular.module('pokerTrackerApp').controller('CashGameCtrl', function ($scope, $
 // It is not the same as the $uibModal service used above.
 
 
-angular.module('pokerTrackerApp').controller('CashGameInstanceCtrl', function ($scope, $uibModalInstance, $http, DropdownOptions) {
+angular.module('pokerTrackerApp').controller('CashGameInstanceCtrl', function ($scope, $uibModalInstance, $http, DropdownOptions, $state) {
 
 	$scope.data = {
   	gameOptions: DropdownOptions.gameType,
@@ -46,6 +45,8 @@ angular.module('pokerTrackerApp').controller('CashGameInstanceCtrl', function ($
 
   $scope.createGame = function() {
     $http.post('/api/cashGames', $scope.newCashGameData);
+    $state.go($state.current, {}, {reload: true});
+    $uibModalInstance.dismiss();
   };
 
   $scope.cancel = function () {
