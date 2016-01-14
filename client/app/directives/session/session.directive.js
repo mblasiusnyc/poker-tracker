@@ -3,7 +3,7 @@
 angular.module('pokerTrackerApp')
   .directive('session', function () {
     return {
-      templateUrl: 'app/directives/session/session.html',
+      templateUrl: 'js/directives/session/session.html',
       restrict: 'EA',
       scope: {
       	item: '='

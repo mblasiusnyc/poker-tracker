@@ -7,7 +7,7 @@ angular.module('pokerTrackerApp').controller('CashGameCtrl', function ($scope, $
 
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
-      templateUrl: 'app/views/cashGame.html',
+      templateUrl: 'templates/cashGame.html',
       controller: 'CashGameInstanceCtrl',
       size: 'sm'
     });

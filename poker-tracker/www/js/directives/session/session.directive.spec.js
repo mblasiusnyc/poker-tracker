@@ -4,7 +4,7 @@ describe('Directive: session', function () {
 
   // load the directive's module and view
   beforeEach(module('pokerTrackerApp'));
-  beforeEach(module('app/directives/session/session.html'));
+  beforeEach(module('js/directives/session/session.html'));
 
   var element, scope;
 

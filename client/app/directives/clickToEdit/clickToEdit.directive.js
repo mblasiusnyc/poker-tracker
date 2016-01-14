@@ -16,7 +16,7 @@ angular.module('pokerTrackerApp')
       	dropdownOptions: '=dropdownOptions'
       },
       link: function (scope, element, attrs) {
-      		scope.templateUrl = 'app/directives/clickToEdit/clickToEdit.' + scope.fieldType + '.html';
+      		scope.templateUrl = 'js/directives/clickToEdit/clickToEdit.' + scope.fieldType + '.html';
       },
       controller: function($scope, DropdownOptions, $timeout, $http, $stateParams, moment) {
       	if($scope.dropdownOptions) {
