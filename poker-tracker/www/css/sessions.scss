@@ -1,0 +1,21 @@
+
+
+#new-session-buttons, #sessions-list {
+	max-width: 500px;
+	margin: auto;
+	text-align: center;
+}
+
+#new-session-buttons {
+	margin-bottom: 10px;
+}
+
+#new-session-buttons button {
+	margin: 0 auto;
+}
+
+#sessions-list li {
+	height: 80px;
+	text-align: center;
+	border: 1px solid gray;
+}
