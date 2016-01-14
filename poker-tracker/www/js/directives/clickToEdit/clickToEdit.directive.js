@@ -18,7 +18,7 @@ angular.module('pokerTrackerApp')
       link: function (scope, element, attrs) {
       		scope.templateUrl = 'js/directives/clickToEdit/clickToEdit.' + scope.fieldType + '.html';
       },
-      controller: function($scope, DropdownOptions, $timeout, $http, $stateParams, moment) {
+      controller: function($scope, DropdownOptions, $timeout, $http, serverConfig, $stateParams, moment) {
       	if($scope.dropdownOptions) {
       		$scope.options = DropdownOptions[$scope.dropdownOptions];
       	}
@@ -98,7 +98,7 @@ angular.module('pokerTrackerApp')
 	          var newSession = {};
 	          newSession[$scope.key] = $scope.value;
 	          if($scope.value2) newSession[$scope.key2] = $scope.value2;
-      	  	$http.put('/api/cashGames/'+$stateParams.sessionId, newSession).success(function(cashGame, Status) {
+      	  	$http.put(serverConfig.address + 'api/cashGames/'+$stateParams.sessionId, newSession).success(function(cashGame, Status) {
         			console.log( Status === 200 ? "Session has been saved" : "There was an error saving the session");
         		});
         	}

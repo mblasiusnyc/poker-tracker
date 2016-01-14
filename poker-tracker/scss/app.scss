@@ -50,15 +50,9 @@ label {
 	text-align: center;
 }
 
-// Component styles are injected through grunt
-// injector
-// @import 'account/login/login.scss';
-// @import 'admin/admin.scss';
-@import 'www/js/directives/clickToEdit/clickToEdit.scss';
-@import 'www/js/directives/session/session.scss';
-// @import 'main/main.scss';
-@import './createSession.scss';
-@import './session.scss';
-@import './sessions.scss';
-// @import 'modal/modal.scss';
-// endinjector
+// @import 'www/js/directives/clickToEdit/clickToEdit.scss';
+// @import 'www/js/directives/session/session.scss';
+// @import './createSession.scss';
+// @import './session.scss';
+// @import './sessions.scss';
+// // @import 'modal/modal.scss';

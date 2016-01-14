@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('pokerTrackerApp')
-  .controller('SessionCtrl', function ($stateParams, $scope, $http) {
+  .controller('SessionCtrl', function ($stateParams, $scope, $http, serverConfig) {
 
-  	$http.get('/api/cashGames/'+$stateParams.sessionId).success(function(session) {
+  	$http.get(serverConfig.address + 'api/cashGames/'+$stateParams.sessionId).success(function(session) {
   	  $scope.session = session;
   	});
 
   	$scope.deleteSession = function(){
-	  	$http.delete('/api/cashGames/'+$stateParams.sessionId).success(function(Err, Status) {
+	  	$http.delete(serverConfig.address + 'api/cashGames/'+$stateParams.sessionId).success(function(Err, Status) {
   			console.log('Session Deleted');
   		});
   	}
@@ -16,7 +16,7 @@ angular.module('pokerTrackerApp')
   	$scope.endSession = function(){
   		var endDate = moment(new Date(Date.now()));
   		$scope.session.endTime = endDate.toISOString();
-	  	$http.put('/api/cashGames/'+$stateParams.sessionId, $scope.session).success(function(cashGame, Status) {
+	  	$http.put(serverConfig.address + 'api/cashGames/'+$stateParams.sessionId, $scope.session).success(function(cashGame, Status) {
   			console.log('Session Updated');
   			$scope.$broadcast('sessionUpdated');
   		});

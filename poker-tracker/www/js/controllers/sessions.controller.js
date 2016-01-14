@@ -5,7 +5,7 @@ angular.module('pokerTrackerApp')
 
     $scope.sessions = [];
 
-    $http.get('/api/cashGames').success(function(cashGames) {
+    $http.get('https://poker-tracker-server.herokuapp.com/api/cashGames').success(function(cashGames) {
       cashGames.forEach(function(cashGame) {
       	$scope.sessions.push(cashGame);
       });
