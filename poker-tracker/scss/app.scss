@@ -1,0 +1,64 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'www/lib/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'www/lib/font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+.log {
+	color: white;
+}
+
+// Color Variables
+$green-light: #7AC143;
+$green-dark: #3D8901;
+$gray-light: #F4F4F4;
+$gray-medium: #AAAAAA;
+$gray-dark: #333333;
+
+// Main Settings
+$primary-font: 'Josefin Sans', sans-serif;
+$background-color: $gray-dark;
+$primary-font-color: $gray-dark;
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+body {
+	background-color: $background-color;
+	color: $primary-font-color;
+	font-family: $primary-font;
+	margin-bottom: 30px;
+}
+
+input {
+	color: black;
+}
+
+label {
+	color: white;
+}
+
+.container {
+	text-align: center;
+}
+
+// Component styles are injected through grunt
+// injector
+// @import 'account/login/login.scss';
+// @import 'admin/admin.scss';
+@import 'www/js/directives/clickToEdit/clickToEdit.scss';
+@import 'www/js/directives/session/session.scss';
+// @import 'main/main.scss';
+@import './createSession.scss';
+@import './session.scss';
+@import './sessions.scss';
+// @import 'modal/modal.scss';
+// endinjector
