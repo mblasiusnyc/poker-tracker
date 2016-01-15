@@ -1,21 +1,39 @@
-
-
-#new-session-buttons, #sessions-list {
-	max-width: 500px;
-	margin: auto;
-	text-align: center;
-}
-
-#new-session-buttons {
-	margin-bottom: 10px;
-}
-
 #new-session-buttons button {
-	margin: 0 auto;
+	width: 50%;
+	height: 100%;
+	background: black;
+	position: absolute;
+	top: 0;
 }
 
-#sessions-list li {
-	height: 80px;
-	text-align: center;
-	border: 1px solid gray;
+#new-cash-game {
+	left: 0;
+	border: 1px solid green;
 }
+#new-tournament {
+	right: 0;
+	border: 1px solid green;
+	border-left: none;
+}
+
+
+
+// #new-session-buttons, #sessions-list {
+// 	max-width: 500px;
+// 	margin: auto;
+// 	text-align: center;
+// }
+
+// #new-session-buttons {
+// 	margin-bottom: 10px;
+// }
+
+// #new-session-buttons button {
+// 	margin: 0 auto;
+// }
+
+// #sessions-list li {
+// 	height: 80px;
+// 	text-align: center;
+// 	border: 1px solid gray;
+// }

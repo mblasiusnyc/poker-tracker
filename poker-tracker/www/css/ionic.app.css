@@ -16992,3 +16992,19 @@ label {
 
 .container {
   text-align: center; }
+
+#new-session-buttons button {
+  width: 50%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  top: 0; }
+
+#new-cash-game {
+  left: 0;
+  border: 1px solid green; }
+
+#new-tournament {
+  right: 0;
+  border: 1px solid green;
+  border-left: none; }
