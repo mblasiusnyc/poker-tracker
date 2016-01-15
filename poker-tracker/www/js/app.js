@@ -64,12 +64,8 @@ angular.module('pokerTrackerApp', [
   })
   .state('session', {
     url: '/session/:sessionId',
-    views: {
-      'session': {
-        templateUrl: 'templates/session.html',
-        controller: 'SessionCtrl'
-      }
-    }
+    templateUrl: 'templates/session.html',
+    controller: 'SessionCtrl'
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/sessions');

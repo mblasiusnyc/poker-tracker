@@ -1,4 +1,4 @@
-<ion-item>
+<ion-item ui-sref="session({sessionId: item._id})" href="/session/{{item._id}}">
 	<div class="session-date">
 		<span class="session-day-of-week">{{ item.startDayOfWeek }}</span>
 		<span class="session-day-number">{{ item.startDayNumber }}</span>
