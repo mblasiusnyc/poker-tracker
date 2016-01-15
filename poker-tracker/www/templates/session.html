@@ -1,28 +1,69 @@
 <!-- <form name="sessionform"> -->
 <ion-view view-title="session">
 	<ion-content>
-		<ul class="session-stats-list">
-			<li class="session-stat">
+		<ion-list class="session-stats-list">
+
+			<ion-item>
 				<span class="stat-name">{{ session.lengthMinutes | minutesToTime }}</span>
 				<span class="stat-value">{{ session.cashOut - session.buyIn | currency }}</span>
-			</li>
+			</ion-item>
 
-			<li class="session-stat">
+			<ion-item class="session-stat">
 				<span class="stat-name">Net hour rate</span>
 				<span class="stat-value">{{ (session.cashOut - session.buyIn)/(session.lengthMinutes/60) | currency }}</span>
-			</li>
+			</ion-item>
 
-			<div class="blinds-stat" stat-name="'Blinds'" stat-key="'smallBlind'" stat-key2="'bigBlind'" stat-value="session.smallBlind" stat-value2="session.bigBlind" field-type="'blinds'" click-to-edit></div>
-			<div stat-name="'Buy-in'" stat-key="'buyIn'" stat-value="session.buyIn" field-type="'number'" click-to-edit></div>
-			<div stat-name="'Cashed-out'" stat-key="'cashOut'" stat-value="session.cashOut" field-type="'number'" click-to-edit></div>
-			<div stat-name="'Tips'" stat-key="'tips'" stat-value="session.tips" field-type="'number'" click-to-edit></div>
-			<div stat-name="'Game'" stat-key="'gameType'" stat-value="session.gameType" field-type="'dropdown'" dropdown-options="'gameType'" click-to-edit></div>
-			<div stat-name="'Location'" stat-key="'location'" stat-value="session.location" field-type="'dropdown'" dropdown-options="'location'" click-to-edit></div>
-			<div stat-name="'Bankroll'" stat-key="'bankroll'" stat-value="session.bankroll" field-type="'dropdown'" dropdown-options="'bankroll'" click-to-edit></div>
-			<div stat-name="'Table Size'" stat-key="'tableSize'" stat-value="session.tableSize" field-type="'dropdown'" dropdown-options="'tableSize'" click-to-edit></div>
-			<div class="date-stat" stat-name="'Start'" stat-key="'startTime'" stat-value="session.startTime" field-type="'date'" click-to-edit></div>
-			<div class="date-stat" stat-name="'End'" stat-key="'endTime'" stat-value="session.endTime" field-type="'date'" click-to-edit></div>
-		</ul>
+			<ion-item class="session-stat">
+				<span class="stat-name">Blinds</span>
+				<span class="stat-value">${{session.smallBlind}}/{{session.bigBlind}}</span>
+			</ion-item>
+
+			<ion-item class="session-stat">
+				<span class="stat-name">Buy In</span>
+				<span class="stat-value">{{session.buyIn}}</span>
+			</ion-item>
+
+			<ion-item class="session-stat">
+				<span class="stat-name">Cash Out</span>
+				<span class="stat-value">{{session.cashOut}}</span>
+			</ion-item>
+
+			<ion-item class="session-stat">
+				<span class="stat-name">Tips</span>
+				<span class="stat-value">{{session.tips}}</span>
+			</ion-item>
+
+			<ion-item class="session-stat">
+				<span class="stat-name">Game</span>
+				<span class="stat-value">{{session.gameType}}</span>
+			</ion-item>
+
+			<ion-item class="session-stat">
+				<span class="stat-name">Location</span>
+				<span class="stat-value">{{session.location}}</span>
+			</ion-item>
+
+			<ion-item class="session-stat">
+				<span class="stat-name">Bankroll</span>
+				<span class="stat-value">{{session.bankroll}}</span>
+			</ion-item>
+
+			<ion-item class="session-stat">
+				<span class="stat-name">Table Size</span>
+				<span class="stat-value">{{session.tableSize}}</span>
+			</ion-item>
+
+			<ion-item class="session-stat">
+				<span class="stat-name">Start</span>
+				<span class="stat-value">{{session.startTime}}</span>
+			</ion-item>
+
+			<ion-item class="session-stat">
+				<span class="stat-name">End</span>
+				<span class="stat-value">{{session.endTime}}</span>
+			</ion-item>
+
+		</ion-list>
 
 		<div class="session-buttons">
 			<button class="btn btn-success" ng-click="endSession()">End Session</button>
