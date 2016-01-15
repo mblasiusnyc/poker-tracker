@@ -1,0 +1,26 @@
+<li ng-mousedown="view.editorEnabled ? return : enableEditor()" class="click-to-edit">
+    <span class="stat-name">{{ name }}</span>
+    <span ng-hide="view.editorEnabled" class="stat-value">{{ blindsString }}</span>
+		  <input
+		  	name="big-blind"
+			  ng-show="view.editorEnabled"
+			  ng-mousedown="$event.stopPropagation()"
+		  	class="edit-field"
+		  	ng-keypress="($event.charCode==13) ? save() : return"
+		  	ng-model="view.editableValue2"
+		  	type="number"
+		  	ng-blur="focus[2] = false"
+		  	ng-focus="focus[2] = true"
+		  >
+		  <input
+		  	name="small-blind"
+			  ng-show="view.editorEnabled"
+			  focus-on-show
+		  	class="edit-field"
+		  	ng-keypress="($event.charCode==13) ? save() : return"
+		  	ng-model="view.editableValue"
+		  	type="number"
+		  	ng-blur="focus[1] = false"
+		  	ng-focus="focus[1] = true"
+		  >
+</li>

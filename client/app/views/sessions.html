@@ -1,8 +1,0 @@
-<div id="new-session-buttons" ng-controller="CashGameCtrl">
-	<a ng-click="open()"><button class="btn btn-large">New Cash Game</button></a>
-	<a ng-click="open()"><button class="btn btn-large">New Tournament</button></a>
-</div>
-
-<ul id="sessions-list">
-	<session ng-repeat="item in sessions | orderBy: '-startTime'" item="item" ui-sref="session({sessionId: item._id})"></session>
-</ul>

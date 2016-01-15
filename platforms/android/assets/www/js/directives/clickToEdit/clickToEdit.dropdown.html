@@ -1,0 +1,18 @@
+<!-- TODO: clean up the behavior of dropdown when same option is reselected -->
+
+<li ng-mousedown="view.editorEnabled ? return : enableEditor()" class="click-to-edit">
+		<span class="stat-name">{{ name }}</span>
+    <span ng-hide="view.editorEnabled" class="stat-value">{{ value }}</span>
+	  <select
+		  name="{{ name.toLowerCase() }}"
+	  	ng-show="view.editorEnabled"
+	  	ng-options="option for option in options"
+	  	focus-on-show
+	  	class="edit-field"
+	  	ng-keypress="($event.charCode==13) ? save() : return"
+	  	ng-model="view.editableValue"
+	  	type="dropdown"
+	  	ng-blur="save()"
+		  ng-change="save()"
+	  ></select>
+</li>

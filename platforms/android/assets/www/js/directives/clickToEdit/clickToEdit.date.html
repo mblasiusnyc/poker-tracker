@@ -1,0 +1,14 @@
+<li ng-mousedown="view.editorEnabled ? return : enableEditor()" class="click-to-edit">
+    <span class="stat-name">{{ name }}</span>
+    <span ng-hide="view.editorEnabled" class="stat-value">{{ value | date:"short" | isInvalidDate }}</span>
+	  <input
+	  	name="{{ name.toLowerCase() }}"
+		  ng-show="view.editorEnabled"
+		  focus-on-show
+	  	class="edit-field"
+	  	ng-keypress="($event.charCode==13) ? save() : return"
+	  	ng-model="view.editableValue"
+	  	type="datetime-local"
+	  	ng-blur="save()"
+	  >
+</li>

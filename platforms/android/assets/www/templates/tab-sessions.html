@@ -1,0 +1,14 @@
+<ion-view view-title="Sessions">
+	<div class="bar bar-subheader">
+		<div id="new-session-buttons" ng-controller="CashGameCtrl">
+			<a ng-click="open()"><button id="new-cash-game">New Cash Game</button></a>
+			<a ng-click="open()"><button id="new-tournament">New Tournament</button></a>
+		</div>
+	</div>
+
+  <ion-content class="has-subheader">
+  	<ion-list id="sessions-list">
+  		<session ng-repeat="item in sessions | orderBy: '-startTime'" item="item" ui-sref="session({sessionId: item._id})"></session>
+  	</ion-list>
+  </ion-content>
+</ion-view>
